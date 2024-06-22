@@ -41,6 +41,31 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+
+	<!-- Permission options for the `location` group -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need access to your location while the app is in use to provide location-based features.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We need access to your location at all times to ensure seamless location-based services.</string>
+    <key>NSLocationUsageDescription</key>
+    <string>We require location access for older devices to provide location-based services.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We need continuous access to your location to provide ongoing location-based features.</string>
+
+	<!-- Permission options for the `photos` group -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to your photo library to select photos and videos.</string>
+
+	<!-- Permission options for the `camera` group -->
+    <key>NSCameraUsageDescription</key>
+    <string>We need access to your camera to take photos and videos.</string>
+
+	<!-- Permission options for the `bluetooth` -->
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>We need access to Bluetooth to connect to devices.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>We need access to Bluetooth to connect to devices.</string>
+
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
