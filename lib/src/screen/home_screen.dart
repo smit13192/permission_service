@@ -1,4 +1,6 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_service/src/core/widget/button.dart';
 import 'package:permission_service/src/core/widget/gap.dart';
@@ -46,7 +48,18 @@ class HomeScreen extends StatelessWidget {
     ImageService.pickImage(context: context, source: ImageSource.gallery);
   }
 
-  void _locationPermission(BuildContext context) {
-    PermissionService.requestLocationPermission(context);
+  void _locationPermission(BuildContext context) async {
+    bool isLocationPermission =
+        await PermissionService.requestLocationPermission(context);
+    if (isLocationPermission) {
+      try {
+        final isServiceEnable = await Geolocator.isLocationServiceEnabled();
+        log(isServiceEnable.toString(), name: 'isServiceEnabled');
+        final latlng = await Geolocator.getCurrentPosition();
+        log(latlng.toString(), name: 'Latlng');
+      } catch (e) {
+        log(e.toString());
+      }
+    }
   }
 }
